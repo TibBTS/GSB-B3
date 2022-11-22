@@ -1,7 +1,7 @@
 -- Script de restauration de l'application "GSB Frais"
 
 -- Administration de la base de données
-Drop database gsb_b3;
+Drop database if exists gsb_b3;
 CREATE DATABASE gsb_b3 ;
 GRANT SHOW DATABASES ON *.* TO userGsb@localhost -- IDENTIFIED BY 'secret'
 ;
