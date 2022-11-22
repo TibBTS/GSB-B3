@@ -14,6 +14,6 @@ foreach ($visiteurs as $unVisiteur ) {
     $req->bindParam(':hashMdp', $hashMdp, PDO::PARAM_STR);
     $req->bindParam(':unId', $id, PDO::PARAM_STR);
     $req->execute();
-    echo 'le Mdp '. $mdp . 'de '. $unVisiteur['nom']. 'a été hasher =>' . $hashMdp ;
+    echo 'le Mdp '. $mdp . 'de '. $unVisiteur['nom']. 'a été hasher =>' . $hashMdp . "\r\n";
 
 }
