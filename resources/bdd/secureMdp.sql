@@ -2,6 +2,8 @@ use gsb_b3;
 ALTER TABLE visiteur
 MODIFY mdp CHAR(255);
 
+
+select * from visiteur
 -- --------------------------------------------
 /*
 ALTER TABLE visiteur
@@ -17,4 +19,3 @@ SET SQL_SAFE_UPDATES=1;
 
 
 */
-select * from visiteur
