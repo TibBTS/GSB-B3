@@ -27,11 +27,6 @@ switch ($action) {
         include PATH_VIEWS . 'v_connexion.php';
         break;
     case 'valideConnexion':
-        $email = $visiteur['email'];
-        $code = rand(1000, 9999);
-        $pdo->setCodeA2f($id,$code);
-        mail($email, '[GSB-AppliFrais] Code de vérification', "Code : $code");
-        include PATH_VIEWS . 'v_code2facteurs.php';
         $login = filter_input(INPUT_POST, 'login', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
         $mdp = filter_input(INPUT_POST, 'mdp', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
         $visiteur = $pdo->getInfosVisiteur($login, $mdp);
@@ -44,7 +39,13 @@ switch ($action) {
             $nom = $visiteur['nom'];
             $prenom = $visiteur['prenom'];
             Utilitaires::connecter($id, $nom, $prenom);
-            header('Location: index.php');
+            //header('Location: index.php');
+
+            $email = $visiteur['email'];
+            $code = rand(1000, 9999);
+            $pdo->setCodeA2f($id,$code);
+            mail($email, '[GSB-AppliFrais] Code de vérification', "Code : $code");
+            include PATH_VIEWS . 'v_code2facteurs.php';
         }
         break;
     case 'valideA2fConnexion':
