@@ -32,14 +32,14 @@ def setValeurInput(cssSel, valeur):                                            #
 
 # Paramètres ##########################
                                       #
-# URL de l'application                #
-urlAppli = "http://gsb-applifrais/"   #
+# URL de l'application                #http://gsb-b3/
+urlAppli = "http://projetgsb-tibo/"   #
                                       #
 # Informations de connexion à la BDD  #
 configBdd = {                         #
   'user': 'userGsb',                  #
   'password': 'secret',               #
-  'host': '127.0.0.1',                #
+  'host': 'localhost',                #
   'database': 'gsb_frais',            #
   'raise_on_warnings': True           #
 }                                     #
@@ -128,5 +128,5 @@ try:
     driver.find_element(By.CLASS_NAME, 'active')
     log("- Connexion à la page d'accueil : OK")
 except Exception as ex:
-    log("- Erreur, problème à connexion à la page d'accueil...")
+    log("- Erreur, problème de connexion à la page d'accueil...")
     print(ex)
